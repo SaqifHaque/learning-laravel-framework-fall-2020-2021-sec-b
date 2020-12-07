@@ -2,32 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class homeController extends Controller
 {
     public function index(){
 
-    /*	$user = ['name'=> 'alamin', 'id'=>12];
-    	return view('home.index', $user);*/
-
-    	/*
-    	$name = 'alamin';
-    	$id = 33;
-    	$cgpa = 4;
-    	return view('home.index', compact('name', 'id', 'cgpa'));*/
-
-    /*	return view('home.index')
-    			->with('name', 'alamin')
-    			->with('id', '66');*/
-
-    	/*return view('home.index')
-    			->withName('alamin')
-    			->withId('66');*/
-
-    	/*$v = view('home.index');
-    	$v->withName('alamin');
-    	$v->withId('12');
-    	return $v;*/
 
     	return view('home.index');
     }
@@ -37,39 +17,55 @@ class homeController extends Controller
     	return view('home.stdlist')->with('students', $students);
     }
 
-	public function details(){
-    	
-    	//return view('home.stdlist');
+	public function edit($id){
+		$students = $this->getStudentlist();
+		
+		return view('home.edit')->with('students',$students)->with('id',$id);
     }
 
     public function create(){
     
-    	//return view('home.create');
+    	return view('home.create');
     }
 
     public function insert(){
-    
-    	//return view('home.create');
+
+		$students = $this->getStudentlist();
+		$num = count($students);
+		$students[$num]['id'] = Input::post('id');
+		$students[$num]['name'] = Input::post('name');
+		$students[$num]['cgpa'] = Input::post('cgpa');
+		$students[$num]['email'] = Input::post('email');
+    	return view('home.stdlist')->with('students',$students);
     }
 
-    public function edit(){
-    	
-    	//return view('home.stdlist');
+    public function details($id){
+		$students = $this->getStudentlist();
+		
+		return view('home.details')->with('students',$students)->with('id',$id);
     }
 
-    public function update(){
-    	
-    	//return view('home.stdlist');
+    public function update($id){
+		$students = $this->getStudentlist();
+		$num = Input::post('id');
+		$students[$id-1]['id'] = Input::post('id');
+		$students[$id-1]['name'] = Input::post('name');
+		$students[$id-1]['cgpa'] = Input::post('cgpa');
+		$students[$id-1]['email'] = Input::post('email');
+		
+		return view('home.stdlist')->with('students',$students)->with('id',$id);
     }
 
-    public function delete(){
-    	
-    	//return view('home.stdlist');
+    public function delete($id){
+    	$students = $this->getStudentlist();
+		
+		return view('home.delete')->with('students',$students)->with('id',$id);
     }
 
-    public function destroy(){
-    	
-    	//return view('home.stdlist');
+    public function destroy($id){
+    	$students = $this->getStudentlist();
+		array_splice($students, $id-1, 1);
+		return view('home.stdlist')->with('students',$students)->with('id',$id);
     }
 
     private function getStudentlist(){
