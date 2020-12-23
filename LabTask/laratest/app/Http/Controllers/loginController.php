@@ -15,12 +15,12 @@ class loginController extends Controller
 
     public function ValidateLogin(Request $req)
     {
-        $user  = User::where('email', $req->email)
+        $user  = User::where('uname', $req->u_name)
                         ->where('password', $req->password)
                         ->first();
-        if(count($user) > 0)
+        if($user)
         {
-            $req->session()->put('email', $user->email);
+            $req->session()->put('uname', $user->u_name);
             $req->session()->put('type', $user->type);
             
     		return redirect()->route('home.index');

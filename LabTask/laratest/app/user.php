@@ -1,12 +1,11 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class User extends Model
 {
-   	//protected $table = 'admins';
+   	//protected $table = 'jobs';
 	//protected $primaryKey = "id";
 	public $timestamps = false;
 
