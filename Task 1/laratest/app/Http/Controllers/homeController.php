@@ -64,7 +64,7 @@ class homeController extends Controller
 
     public function destroy($id){
     	$students = $this->getStudentlist();
-		array_splice($students, $id-1, 1);
+		array_splice($students, $id-1 ,1);
 		return view('home.stdlist')->with('students',$students)->with('id',$id);
     }
 
