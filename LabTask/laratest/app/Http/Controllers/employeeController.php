@@ -10,7 +10,10 @@ class employeeController extends Controller
 {
     public function Employee()
     {
-        return view('emp.empdash');
+        return view('employee.empdash');
+    }
+    public function Job(){
+        return view('employee.addjob');
     }
     public function addJob(Request $req)
     {
