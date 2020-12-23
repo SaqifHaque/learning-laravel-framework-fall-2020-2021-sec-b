@@ -9,7 +9,7 @@
                 <legend>Login</legend>
                 <table>
                     <tr>
-                        <td>Email</td>
+                        <td>User Name</td>
                         <td><input type="text" name="uname"></td>
                     </tr>
                     <tr>

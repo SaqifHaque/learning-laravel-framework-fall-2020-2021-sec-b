@@ -15,15 +15,20 @@ class loginController extends Controller
 
     public function ValidateLogin(Request $req)
     {
-        $user  = User::where('uname', $req->u_name)
+        $user  = User::where('uname', $req->uname)
                         ->where('password', $req->password)
                         ->first();
         if($user)
         {
             $req->session()->put('uname', $user->u_name);
             $req->session()->put('type', $user->type);
-            
-    		return redirect()->route('home.index');
+
+            if($user->type === "Admin"){
+                return redirect()->route('home.index');
+            }
+            else{
+                return redirect()->route('home.index');
+            }
         }
         else{
             echo "failed";

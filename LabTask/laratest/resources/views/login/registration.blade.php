@@ -2,7 +2,8 @@
 <html>
 
 <body>
-
+<form action="" method="POST">
+<input type="hidden" name="_token" value="{{csrf_token()}}">
     <div>
         <fieldset>
             <legend>Login</legend>
@@ -35,6 +36,7 @@
         </fieldset>
 
     </div>
+    </form>
 
 
 </body>

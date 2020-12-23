@@ -13,4 +13,6 @@
 
 Route::get('/login','loginController@Login')->name('login.login');
 Route::post('/login', 'loginController@ValidateLogin');
-Route::get('/home','homeController@Login')->name('home.index');
+Route::get('/registration','registrationController@Registration')->name('registration.registration');
+Route::post('/registration','registrationController@Register');
+Route::get('/admin','adminController@Login')->name('home.index');
