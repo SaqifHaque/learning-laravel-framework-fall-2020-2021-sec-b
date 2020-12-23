@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <body>
 <form action="" method="POST">
 <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -29,7 +28,6 @@
                     <td><input type="password" name="password"></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td><input type="submit" name="submit" value="Submit"></td>
                 </tr>
             </table>
