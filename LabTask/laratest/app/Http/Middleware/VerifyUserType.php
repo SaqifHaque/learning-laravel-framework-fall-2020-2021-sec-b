@@ -17,11 +17,10 @@ class VerifyUserType
     {
 
         if($request->session()->get('type') == 'Admin'){
-            return $next($request);
-        
+            return $next($request); 
         }
         else{
-            return redirect()->route('admin.admindash');
+            return redirect()->route('emp.empdash');
         }
     }
 }

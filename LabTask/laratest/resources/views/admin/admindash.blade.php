@@ -3,8 +3,11 @@
     <div>
         <h1>Welcome AdminDash!</h1>
         <a href="/addemployee">Create New Employee</a> |
-        <a href="/employeelist">View EmployeeList</a> |
-        <a href="/logout">Logout</a>
+        <a href="/employee-list">View Employee List</a> |
+        <form action="../logout" method="POST">
+        @csrf
+        <input type="submit" name="submit" value="Logout" >
+        </form>
         <br>
     </div>
 </body>

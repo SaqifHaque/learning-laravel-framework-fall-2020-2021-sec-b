@@ -31,7 +31,7 @@ class loginController extends Controller
             }
         }
         else{
-            echo "failed";
+            return redirect()->route('login.login');
         }
     }
     
