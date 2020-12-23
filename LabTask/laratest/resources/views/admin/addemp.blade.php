@@ -5,23 +5,27 @@
 <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div>
         <fieldset>
-            <legend>Add Jobs</legend>
+            <legend>Add Employee</legend>
             <table>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" name="fullname"></td>
+                </tr>
                 <tr>
                     <td>Company Name</td>
                     <td><input type="text" name="c_name"></td>
                 </tr>
                 <tr>
-                    <td>Job Title</td>
-                    <td><input type="text" name="j_title"></td>
+                    <td>Contact</td>
+                    <td><input type="text" name="contact"></td>
                 </tr>
                 <tr>
-                    <td>Location</td>
-                    <td><input type="text" name="location"></td>
+                    <td>User Name</td>
+                    <td><input type="text" name="u_name"></td>
                 </tr>
                 <tr>
-                    <td>Salary</td>
-                    <td><input type="text" name="salary"></td>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="submit" value="Create"></td>

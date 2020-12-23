@@ -20,11 +20,8 @@ class VerifyUserType
             return $next($request);
         
         }
-        else if($request->session()->get('type') == 'Employee'){
-            return redirect()->route('emp.empdash');
-        }
         else{
-            return redirect()->route('/');
+            return redirect()->route('admin.admindash');
         }
     }
 }

@@ -5,7 +5,7 @@
 <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div>
         <fieldset>
-            <legend>Add Jobs</legend>
+            <legend>Add Job</legend>
             <table>
                 <tr>
                     <td>Company Name</td>
